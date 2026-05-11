@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 const enabled = ref(true);
 const gender = ref("남");
-const color = ref("노랑");
+const color = ref("yellow");
 </script>
 
 <template>
@@ -16,9 +16,9 @@ const color = ref("노랑");
         </div>
         <div class="row">
             <select v-model="color">
-                <option>노랑</option>
-                <option>빨강</option>
-                <option>파랑</option>
+                <option value="yellow">노랑</option>
+                <option value="red">빨강</option>
+                <option value="blue">파랑</option>
             </select>
         </div>
         <hr />
