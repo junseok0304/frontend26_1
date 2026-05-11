@@ -1,10 +1,13 @@
 <script setup>
 import MyForm from './MyForm.vue';
+import MyFormPrac from './MyFormPrac.vue';
 </script>
 
 <template>
   <main class="app">
     <MyForm />
+    <hr />
+    <MyFormPrac />
   </main>
 </template>
 
