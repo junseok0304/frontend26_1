@@ -1,6 +1,7 @@
 <script setup>
 import MyCheckbox1 from './MyCheckbox1.vue';
 import MyCheckbox2 from './MyCheckbox2.vue';
+import ThreeState from '../ThreeState.vue';
 </script>
 
 <template>
@@ -8,6 +9,8 @@ import MyCheckbox2 from './MyCheckbox2.vue';
     <MyCheckbox1 />
     <hr />
     <MyCheckbox2 />
+    <hr />
+    <ThreeState />
   </main>
 </template>
 
