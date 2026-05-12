@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-defineProps(['title']);
+defineProps(['title', 'step']);
 const count = ref(0);
 </script>
 
@@ -8,8 +8,8 @@ const count = ref(0);
     <div>
         <p>{{ title }}</p>
         <p>{{ count }}</p>
-        <button type="button" v-on:click="++count">Increase</button>
-        <button type="button" v-on:click="--count">Decrease</button>
+        <button type="button" v-on:click="count += step">Increase</button>
+        <button type="button" v-on:click="count -= step">Decrease</button>
     </div>
 </template>
 

@@ -4,9 +4,9 @@ import MyCounter from './MyCounter.vue'
 
 <template>
   <main class="app">
-    <MyCounter title="카운터#1" />
+    <MyCounter title="카운터#1" v-bind:step="1" />
     <hr />
-    <MyCounter title="카운터#2" />
+    <MyCounter title="카운터#2" v-bind:step="2" />
   </main>
 </template>
 
