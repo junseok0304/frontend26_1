@@ -1,5 +1,12 @@
 <script setup>
-const persons = [{ id: 101, name: "홍길동", age: 16 }, { id: 102, name: "김철수", age: 20 }, { id: 103, name: "박영희", age: 25 }, { id: 104, name: "최민수", age: 30 }];
+import { ref } from 'vue';
+const persons = ref ([{ id: 101, name: "홍길동", age: 16 }, { id: 102, name: "김철수", age: 20 }, { id: 103, name: "박영희", age: 25 }, { id: 104, name: "최민수", age: 30 }]);
+
+function remove(index) {
+    if (confirm("삭제하시겠습니까?")){
+        persons.value.splice(index,1);
+    }
+}
 </script>
 
 <template>
@@ -13,6 +20,7 @@ const persons = [{ id: 101, name: "홍길동", age: 16 }, { id: 102, name: "김�
             <td>{{ person.id }}</td>
             <td>{{ person.name }}</td>
             <td>{{ person.age }}</td>
+            <td><button type="button" v-on:click="remove(index)">삭제</button></td>
         </tr>
     </table>
 </template>
