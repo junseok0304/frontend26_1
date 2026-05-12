@@ -1,10 +1,16 @@
 <script setup>
 import MyTrim from './MyTrim.vue';
+import MyLazy from './MyLazy.vue';
+import MyEnter from './MyEnter.vue';
 </script>
 
 <template>
   <div id="app">
     <MyTrim />
+    <hr/>
+    <MyLazy />
+    <hr/>
+    <MyEnter />
   </div>
 </template>
 

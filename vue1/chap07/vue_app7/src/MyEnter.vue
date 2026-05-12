@@ -1,14 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 const message = ref("");
+
+function showMessage() {
+    alert(message.value);
+}
 </script>
 
 <template>
     <div>
-        <h1>v-model.trim</h1>
-        <!-- <textarea v-model.trim="message" cols="50" rows="7"></textarea> -->
-        <input type="text" v-model.trim="message"/>
-        <pre>[{{ message }}]</pre>
+        <h1>@keyup.enter</h1>
+        <input type="text" v-model="message" v-on:keyup.enter="showMessage" />
     </div>
 </template>
 

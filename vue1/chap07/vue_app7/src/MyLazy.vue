@@ -5,10 +5,9 @@ const message = ref("");
 
 <template>
     <div>
-        <h1>v-model.trim</h1>
-        <!-- <textarea v-model.trim="message" cols="50" rows="7"></textarea> -->
-        <input type="text" v-model.trim="message"/>
-        <pre>[{{ message }}]</pre>
+        <h1>v-model.lazy</h1>
+        <input type="text" v-model.trim.lazy="message" />
+        <pre>{{ message }}</pre>
     </div>
 </template>
 
