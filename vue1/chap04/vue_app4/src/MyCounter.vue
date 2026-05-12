@@ -8,8 +8,8 @@ const count = ref(0);
     <div>
         <p>{{ title }}</p>
         <p>{{ count }}</p>
-        <button type="button" v-on:click="count += step">Increase</button>
-        <button type="button" v-on:click="count -= step">Decrease</button>
+        <button type="button" @click="count += step">Increase</button>
+        <button type="button" @click="count -= step">Decrease</button>
     </div>
 </template>
 
