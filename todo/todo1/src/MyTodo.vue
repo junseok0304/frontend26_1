@@ -21,6 +21,9 @@ function deleteTodo(index) {
         localStorage.setItem(KEY, JSON.stringify(todos.value))
     }
 }
+function save() {
+    localStorage.setItem(KEY, JSON.stringify(todos.value))
+}
 </script>
 <template>
     <div>
@@ -36,7 +39,7 @@ function deleteTodo(index) {
                 <tr v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:class="{ gray: todo.done }">
                     <td>{{ todo.id }}</td>
                     <td>
-                        <input type="checkbox" v-model="todo.done" />
+                        <input type="checkbox" v-model="todo.done" v-on:change="save" />
                         {{ todo.title }}
                         <span v-on:click="deleteTodo(index)">x</span>
                     </td>
