@@ -10,7 +10,12 @@ function addTodo() {
     const lastId = todos.value.length == 0 ? 0 :
         todos.value[todos.value.length - 1].id;
     todos.value.push({ id: lastId + 1, title: title.value });
-    title.value = "";
+    title.value =
+        "";
+}
+function deleteTodo(index) {
+    if (confirm("삭제하시겠습니까?"))
+        todos.value.splice(index, 1);
 }
 </script>
 <template>
@@ -24,9 +29,11 @@ function addTodo() {
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="todo in todos" v-bind:key="todo.id">
+                <tr v-for="(todo, index) in todos" v-bind:key="todo.id">
                     <td>{{ todo.id }}</td>
-                    <td>{{ todo.title }}</td>
+                    <td>{{ todo.title }}
+                        <span v-on:click="deleteTodo(index)">x</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -59,6 +66,20 @@ td {
 td:nth-child(1) {
     text-align: center;
     width: 30px;
+}
+
+td span {
+    font-weight: bold;
+    float: right;
+}
+
+td span:hover {
+    color: red;
+    cursor: pointer;
+}
+
+tr:has(span:hover) {
+    background-color: #ffd;
 }
 
 input[type=text] {
