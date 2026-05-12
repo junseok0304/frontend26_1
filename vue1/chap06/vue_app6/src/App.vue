@@ -1,6 +1,9 @@
 <script setup>
 import MyList1 from './MyList1.vue';
 import MyList2 from './MyList2.vue';
+import MyList3 from './MyList3.vue';
+import HwGugu1 from './HwGugu1.vue';
+import HwGugu2 from './HwGugu2.vue';
 </script>
 
 <template>
@@ -8,6 +11,12 @@ import MyList2 from './MyList2.vue';
     <MyList1 />
     <hr /> 
     <MyList2 />
+    <hr />
+    <MyList3 />
+    <hr />
+    <HwGugu1 />
+    <hr />
+    <HwGugu2 />
   </div>
 </template>
 
