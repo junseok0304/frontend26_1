@@ -1,12 +1,16 @@
 <script setup>
+import { ref } from 'vue';
 import MyCounter from './MyCounter.vue'
+const title = ref("my counter");
+const step = ref(1);
 </script>
 
 <template>
   <main class="app">
-    <MyCounter title="카운터#1" :step="1" />
+    <input type="text" v-model="title"/>
+    <input type="number" v-model="step"/>
     <hr />
-    <MyCounter title="카운터#2" :step="2" />
+    <MyCounter :title="title" :step="step" />
   </main>
 </template>
 

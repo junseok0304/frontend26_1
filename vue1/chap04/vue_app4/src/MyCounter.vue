@@ -3,7 +3,6 @@ import { ref } from 'vue';
 const {title="카운터", step=1} = defineProps(['title','step']);
 //defineProps(['title', 'step']); template에서만 사용시
 const count = ref(0);
-console.log(title,step);
 </script>
 
 <template>
