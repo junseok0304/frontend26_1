@@ -3,14 +3,16 @@ import { ref } from 'vue';
 import MyCounter from './MyCounter.vue'
 const title = ref("my counter");
 const step = ref(1);
+const value = ref(5);
 </script>
 
 <template>
   <main class="app">
     <input type="text" v-model="title"/>
     <input type="number" v-model="step"/>
+    <input type="number" v-model="value"/>
     <hr />
-    <MyCounter :title="title" :step="step" />
+    <MyCounter :title="title" :step="step" :value="value" />
   </main>
 </template>
 
