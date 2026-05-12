@@ -1,11 +1,18 @@
 <script setup>
-const list = ["zero", "one", "two", "three", "four", "five"];
+import { ref } from 'vue';
+const list = ref(["zero", "one", "two", "three", "four", "five"]);
+
+function remove(index) {
+    if (confirm("삭제하시겠습니까?")) {
+        list.value.splice(index, 1);
+    }
+}
 </script>
 
 <template>
     <div>
-        <span v-for="(s, index) in list" v-bind:key="s">
-            {{ index }} - {{ s }}
+        <span v-for="(s, index) in list" v-bind:key="s" v-on:click="remove(index)">
+            {{ s }}
         </span>
     </div>
 </template>
