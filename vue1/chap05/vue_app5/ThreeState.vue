@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import LoadingSpinner from './LoadingSpinner.vue'
 const state = ref(0);
 const changeState = () => state.value = (state.value + 1) % 3;
 </script>
@@ -10,6 +11,7 @@ const changeState = () => state.value = (state.value + 1) % 3;
         <br />
         <div v-if="state == 0">
             <span>Loading...</span>
+            <LoadingSpinner />
         </div>
         <div v-else-if="state == 1">
             <span>Error!</span>
