@@ -4,7 +4,7 @@ const list = ["zero", "one", "two", "three", "four", "five"];
 
 <template>
     <div>
-        <span v-for="(s, index) in list" key="s">
+        <span v-for="(s, index) in list" v-bind:key="s">
             {{ index }} - {{ s }}
         </span>
     </div>
