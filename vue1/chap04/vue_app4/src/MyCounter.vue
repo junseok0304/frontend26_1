@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from 'vue';
+defineProps(['title']);
 const count = ref(0);
 </script>
 
 <template>
     <div>
-        <p> {{ count }}</p>
+        <p>{{ title }}</p>
+        <p>{{ count }}</p>
         <button type="button" v-on:click="++count">Increase</button>
         <button type="button" v-on:click="--count">Decrease</button>
     </div>
