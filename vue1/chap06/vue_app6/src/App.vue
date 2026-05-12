@@ -1,10 +1,13 @@
 <script setup>
 import MyList1 from './MyList1.vue';
+import MyList2 from './MyList2.vue';
 </script>
 
 <template>
   <div id="app">
     <MyList1 />
+    <hr /> 
+    <MyList2 />
   </div>
 </template>
 
