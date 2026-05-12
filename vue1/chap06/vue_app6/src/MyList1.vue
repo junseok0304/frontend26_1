@@ -4,8 +4,8 @@ const list = ["zero", "one", "two", "three", "four", "five"];
 
 <template>
     <div>
-        <span v-for="s in list" :key="s">
-            {{ s }}
+        <span v-for="(s, index) in list" key="s">
+            {{ index }} - {{ s }}
         </span>
     </div>
 </template>

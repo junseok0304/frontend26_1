@@ -1,5 +1,5 @@
 <script setup>
-import MyList1 from './MyList1';
+import MyList1 from './MyList1.vue';
 </script>
 
 <template>
