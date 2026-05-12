@@ -1,30 +1,25 @@
 <script setup>
-import { ref } from 'vue';
-const todos = ref([
-    {
-        id: 1, title: "과제"
-        , done: false
-    },
-    {
-        id: 2, title: "시험공부"
-        , done: false
-    },
-    {
-        id: 3, title: "코딩훈련"
-        , done: false
-    }
-]);
+import { ref, onMounted } from 'vue';
+const todos = ref([]);
 const title = ref('');
+const KEY = "todo1.todos";
+onMounted(() => {
+    const json = localStorage.getItem(KEY);
+    if (json) todos.value = JSON.parse(json);
+})
 function addTodo() {
     const lastId = todos.value.length == 0 ? 0 :
         todos.value[todos.value.length - 1].id;
-    todos.value.push({ id: lastId + 1, title: title.value });
+    todos.value.push({ id: lastId + 1, title: title.value, done: false });
+    localStorage.setItem(KEY, JSON.stringify(todos.value))
     title.value =
         "";
 }
 function deleteTodo(index) {
-    if (confirm("삭제하시겠습니까?"))
+    if (confirm("삭제하시겠습니까?")) {
         todos.value.splice(index, 1);
+        localStorage.setItem(KEY, JSON.stringify(todos.value))
+    }
 }
 </script>
 <template>
@@ -45,6 +40,10 @@ function deleteTodo(index) {
                         {{ todo.title }}
                         <span v-on:click="deleteTodo(index)">x</span>
                     </td>
+                </tr>
+                <tr v-if="todos.length == 0">
+                    <td></td>
+                    <td>할 일이 없습니다</td>
                 </tr>
             </tbody>
         </table>
