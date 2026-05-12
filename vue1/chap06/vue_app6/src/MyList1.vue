@@ -1,11 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 const list = ref(["zero", "one", "two", "three", "four", "five"]);
+const word = ref("");
 
 function remove(index) {
     if (confirm("삭제하시겠습니까?")) {
         list.value.splice(index, 1);
     }
+}
+
+function addWord() {
+    list.value.push(word.value);
 }
 </script>
 
@@ -15,6 +20,8 @@ function remove(index) {
             {{ s }}
         </span>
     </div>
+    <input type="text" v-model="word">
+    <button type="button" @click="addWord">추가</button>
 </template>
 
 <style scoped>
