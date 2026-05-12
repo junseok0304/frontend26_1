@@ -1,9 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 const todos = ref([
-    { id: 1, title: "과제" },
-    { id: 2, title: "시험공부" },
-    { id: 3, title: "코딩훈련" }
+    {
+        id: 1, title: "과제"
+        , done: false
+    },
+    {
+        id: 2, title: "시험공부"
+        , done: false
+    },
+    {
+        id: 3, title: "코딩훈련"
+        , done: false
+    }
 ]);
 const title = ref('');
 function addTodo() {
@@ -29,9 +38,11 @@ function deleteTodo(index) {
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(todo, index) in todos" v-bind:key="todo.id">
+                <tr v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:class="{ gray: todo.done }">
                     <td>{{ todo.id }}</td>
-                    <td>{{ todo.title }}
+                    <td>
+                        <input type="checkbox" v-model="todo.done" />
+                        {{ todo.title }}
                         <span v-on:click="deleteTodo(index)">x</span>
                     </td>
                 </tr>
@@ -103,5 +114,15 @@ button:active {
     box-shadow: none;
     transform: translateY(2px);
     border: none;
+}
+
+tr.gray {
+    background-color: #f8f8f8;
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+input[type=checkbox] {
+    accent-color: #bbb;
 }
 </style>
