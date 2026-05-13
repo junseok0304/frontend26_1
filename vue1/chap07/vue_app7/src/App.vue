@@ -2,6 +2,7 @@
 import MyTrim from './MyTrim.vue';
 import MyLazy from './MyLazy.vue';
 import MyEnter from './MyEnter.vue';
+import MyClick from './MyClick.vue';
 </script>
 
 <template>
@@ -11,6 +12,8 @@ import MyEnter from './MyEnter.vue';
     <MyLazy />
     <hr/>
     <MyEnter />
+    <hr/>
+    <MyClick />
   </div>
 </template>
 
